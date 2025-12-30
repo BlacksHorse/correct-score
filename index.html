@@ -15,8 +15,13 @@
       --text:#EAF2FF;
       --muted:#A8B7D6;
       --gold:#FFB703;
-      --tg:#229ED9;
-      --wa:#25D366;
+
+      --tg1:#229ED9;
+      --tg2:#1C7ED6;
+
+      --wa1:#25D366;
+      --wa2:#12B454;
+
       --shadow:0 18px 60px rgba(0,0,0,.45);
       --radius:18px;
     }
@@ -41,9 +46,25 @@
       box-shadow:var(--shadow);
       padding:22px;
       text-align:center;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .card:before{
+      content:"";
+      position:absolute;
+      inset:-120px -80px auto -80px;
+      height:260px;
+      filter:blur(40px);
+      background:
+        radial-gradient(circle at 30% 40%, rgba(255,183,3,.22), transparent 62%),
+        radial-gradient(circle at 70% 50%, rgba(34,158,217,.18), transparent 62%),
+        radial-gradient(circle at 60% 20%, rgba(37,211,102,.14), transparent 62%);
+      pointer-events:none;
     }
 
     .badge{
+      position:relative;
       display:inline-flex;
       align-items:center;
       gap:8px;
@@ -62,11 +83,13 @@
     }
 
     h1{
+      position:relative;
       margin:6px 0 10px;
       font-size:26px;
       line-height:1.2;
     }
     p{
+      position:relative;
       margin:0 0 18px;
       color:var(--muted);
       font-size:14.5px;
@@ -74,45 +97,58 @@
     }
 
     .btn{
+      position:relative;
       display:flex;
       align-items:center;
       justify-content:space-between;
       gap:12px;
       text-decoration:none;
       padding:14px 16px;
-      border-radius:14px;
-      border:1px solid #2a3d6f;
-      background:#0b1631;
-      color:var(--text);
-      font-weight:700;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.14);
+      color:#fff;
+      font-weight:800;
       margin-bottom:12px;
-      transition:.15s transform,.15s border-color,.15s filter;
+      transition:.15s transform,.15s filter,.15s box-shadow;
+      box-shadow:0 10px 25px rgba(0,0,0,.28);
     }
     .btn:hover{
       transform:translateY(-1px);
       filter:brightness(1.05);
-      border-color:#3a57a0;
     }
+    .btn:active{transform:translateY(0)}
 
     .left{display:flex;align-items:center;gap:12px}
     .icon{
-      width:42px;height:42px;border-radius:12px;
+      width:44px;height:44px;border-radius:14px;
       display:grid;place-items:center;
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.12);
+      background:rgba(0,0,0,.18);
+      border:1px solid rgba(255,255,255,.18);
+      flex:0 0 auto;
     }
-
-    .telegram .icon{background:rgba(34,158,217,.15)}
-    .whatsapp .icon{background:rgba(37,211,102,.15)}
-
     .arrow{
-      width:36px;height:36px;border-radius:12px;
+      width:40px;height:40px;border-radius:14px;
       display:grid;place-items:center;
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.12);
+      background:rgba(0,0,0,.18);
+      border:1px solid rgba(255,255,255,.18);
+      flex:0 0 auto;
+      font-size:18px;
     }
+
+    /* ✅ Premium gradients */
+    .whatsapp{
+      background:linear-gradient(135deg, var(--wa1), var(--wa2));
+    }
+    .telegram{
+      background:linear-gradient(135deg, var(--tg1), var(--tg2));
+    }
+
+    /* SVG icons */
+    svg{display:block}
+    .c-white{fill:#fff}
 
     .note{
+      position:relative;
       margin-top:14px;
       padding:12px;
       border-radius:14px;
@@ -124,14 +160,11 @@
     }
 
     footer{
+      position:relative;
       margin-top:14px;
       font-size:12px;
       color:#93a6cf;
     }
-
-    svg{display:block}
-    .c-tg{fill:var(--tg)}
-    .c-wa{fill:var(--wa)}
   </style>
 </head>
 
@@ -144,35 +177,34 @@
       </div>
 
       <h1>Correct Score Updates</h1>
-      <p>Join our official Telegram and WhatsApp channels for daily football correct score updates.</p>
+      <p>Join our official WhatsApp and Telegram channels for daily football correct score updates.</p>
 
-      <!-- TELEGRAM -->
-      <a class="btn telegram" href="https://t.me/joinchat/98slgsJuP_Y5MzU0" target="_blank">
+      <!-- ✅ WHATSAPP FIRST -->
+      <a class="btn whatsapp" href="https://whatsapp.com/channel/0029VbB1wSD65yD9CsdqiH2V" target="_blank" rel="noopener">
         <div class="left">
-          <div class="icon">
+          <div class="icon" aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 24 24">
-              <path class="c-tg" d="M21.8 4.6c.2-.8-.5-1.5-1.3-1.2L3.7 10.2c-.8.3-.8 1.4 0 1.7l4.3 1.6 1.6 5c.3.8 1.4.9 1.8.2l2.4-3.6 4.4 3.2c.6.4 1.4.1 1.6-.6l2.6-13.1z"/>
-            </svg>
-          </div>
-          <span>Join Telegram Channel</span>
-        </div>
-        <div class="arrow">➜</div>
-      </a>
-
-      <!-- WHATSAPP -->
-      <a class="btn whatsapp" href="https://whatsapp.com/channel/0029VbB1wSD65yD9CsdqiH2V" target="_blank">
-        <div class="left">
-          <div class="icon">
-            <svg width="22" height="22" viewBox="0 0 24 24">
-              <path class="c-wa" d="M20 12a8 8 0 0 1-11.7 7.1L4 20l.9-3.9A8 8 0 1 1 20 12z"/>
+              <path class="c-white" d="M20 12a8 8 0 0 1-11.7 7.1L4 20l.9-3.9A8 8 0 1 1 20 12zm-4.6 2.1c-.2-.1-1.3-.6-1.5-.7-.2-.1-.4-.1-.6.1-.2.2-.7.7-.8.8-.1.1-.3.2-.5.1-.2-.1-.9-.3-1.7-1-.6-.5-1-1.2-1.2-1.4-.1-.2 0-.4.1-.5l.4-.4c.1-.1.2-.3.3-.5.1-.2 0-.4 0-.6 0-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3.9 2.5c.1.2 1.6 2.5 4 3.4 2.4.9 2.4.6 2.9.6.5 0 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.4-.3z"/>
             </svg>
           </div>
           <span>Follow WhatsApp Channel</span>
         </div>
-        <div class="arrow">➜</div>
+        <div class="arrow" aria-hidden="true">➜</div>
       </a>
 
-      <!-- SHORT DISCLAIMER -->
+      <!-- ✅ TELEGRAM SECOND (UPDATED LINK) -->
+      <a class="btn telegram" href="https://t.me/+98slgsJuP_Y5MzU0" target="_blank" rel="noopener">
+        <div class="left">
+          <div class="icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24">
+              <path class="c-white" d="M21.8 4.6c.2-.8-.5-1.5-1.3-1.2L3.7 10.2c-.8.3-.8 1.4 0 1.7l4.3 1.6 1.6 5c.3.8 1.4.9 1.8.2l2.4-3.6 4.4 3.2c.6.4 1.4.1 1.6-.6l2.6-13.1zM9.4 13.1l8.8-5.4-6.8 6.6-.3 3.2-1.4-4.4-2.6-1z"/>
+            </svg>
+          </div>
+          <span>Join Telegram Channel</span>
+        </div>
+        <div class="arrow" aria-hidden="true">➜</div>
+      </a>
+
       <div class="note">
         <b>Disclaimer:</b> Predictions are based on team analysis and past performance.
         No outcomes are guaranteed. <b>18+ only.</b>
@@ -189,4 +221,4 @@
     document.getElementById("y").textContent = new Date().getFullYear();
   </script>
 </body>
-  </html>
+</html>
