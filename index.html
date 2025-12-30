@@ -70,7 +70,7 @@
     }
 
     h1{margin:8px 0 10px;font-size:26px}
-    p{margin:0 0 18px;color:var(--muted);font-size:14.5px}
+    p{margin:0 0 18px;color:var(--muted);font-size:14.5px;line-height:1.5}
 
     .btn{
       display:flex;
@@ -84,7 +84,10 @@
       margin-bottom:12px;
       border:1px solid rgba(255,255,255,.18);
       box-shadow:0 10px 25px rgba(0,0,0,.28);
+      transition:.15s transform,.15s filter;
     }
+    .btn:hover{transform:translateY(-1px);filter:brightness(1.05)}
+    .btn:active{transform:translateY(0)}
 
     .left{display:flex;align-items:center;gap:12px}
     .icon{
@@ -92,12 +95,14 @@
       border-radius:12px;
       display:grid;place-items:center;
       background:rgba(0,0,0,.2);
+      border:1px solid rgba(255,255,255,.16);
     }
     .arrow{
       width:38px;height:38px;
       border-radius:12px;
       display:grid;place-items:center;
       background:rgba(0,0,0,.2);
+      border:1px solid rgba(255,255,255,.16);
       font-size:18px;
     }
 
@@ -112,6 +117,7 @@
       border:1px solid #21335f;
       font-size:12.5px;
       color:#b9c7e8;
+      line-height:1.45;
     }
 
     footer{
@@ -134,7 +140,7 @@
       <p>Join our official WhatsApp and Telegram channels for daily football correct score updates.</p>
 
       <!-- WHATSAPP FIRST -->
-      <a class="btn whatsapp" href="https://whatsapp.com/channel/0029VbB1wSD65yD9CsdqiH2V" target="_blank">
+      <a class="btn whatsapp" href="https://whatsapp.com/channel/0029VbB1wSD65yD9CsdqiH2V" target="_blank" rel="noopener">
         <div class="left">
           <div class="icon">🟢</div>
           <span>Join WhatsApp Channel</span>
@@ -142,8 +148,8 @@
         <div class="arrow">➜</div>
       </a>
 
-      <!-- TELEGRAM SECOND (NEW LINK) -->
-      <a class="btn telegram" href="https://t.me/iBcg9kVZI6M4ZjNk" target="_blank">
+      <!-- TELEGRAM SECOND (FIXED LINK WITH +) -->
+      <a class="btn telegram" href="https://t.me/+iBcg9kVZI6M4ZjNk" target="_blank" rel="noopener">
         <div class="left">
           <div class="icon">🔵</div>
           <span>Join Telegram Channel</span>
@@ -156,9 +162,13 @@
         No outcomes are guaranteed. <b>18+ only.</b>
       </div>
 
-      <footer>© 2025 Correct Score</footer>
+      <footer>© <span id="y"></span> Correct Score</footer>
 
     </section>
   </main>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
