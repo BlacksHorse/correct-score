@@ -1,174 +1,178 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Correct Score — Official Channels</title>
-  <meta name="description" content="Join our official WhatsApp and Telegram channels for daily football correct score updates.">
-
-  <style>
-    :root{
-      --bg1:#070A12;
-      --bg2:#0B1224;
-      --card:#0F1A33cc;
-      --border:#22345f;
-      --text:#EAF2FF;
-      --muted:#A8B7D6;
-
-      --wa1:#25D366;
-      --wa2:#0EA44B;
-
-      --tg1:#229ED9;
-      --tg2:#1C7ED6;
-
-      --radius:18px;
-      --shadow:0 18px 60px rgba(0,0,0,.45);
+<!doctype html>  
+<html lang="en">  
+<head>  
+  <meta charset="utf-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1">  
+  <title>Correct Score — Official Channels</title>  
+  <meta name="description" content="Join our official WhatsApp and Telegram channels for daily football correct score updates.">  
+  
+  <style>  
+    :root{  
+      --bg1:#070A12;  
+      --bg2:#0B1224;  
+      --card:#0F1A33cc;  
+      --border:#22345f;  
+      --text:#EAF2FF;  
+      --muted:#A8B7D6;  
+  
+      --wa1:#25D366;  
+      --wa2:#0EA44B;  
+  
+      --tg1:#229ED9;  
+      --tg2:#1C7ED6;  
+  
+      --radius:18px;  
+      --shadow:0 18px 60px rgba(0,0,0,.45);  
+    }  
+  
+    *{box-sizing:border-box}  
+    body{  
+      margin:0;  
+      min-height:100vh;  
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;  
+      color:var(--text);  
+      background:  
+        radial-gradient(800px 500px at 20% 10%, #1f2a52 0%, transparent 60%),  
+        radial-gradient(700px 450px at 80% 20%, #1a6b6b 0%, transparent 55%),  
+        linear-gradient(180deg,var(--bg1),var(--bg2));  
+      display:flex;  
+      align-items:center;  
+      justify-content:center;  
+      padding:24px;  
+    }  
+  
+    .wrap{width:min(480px,100%)}  
+    .card{  
+      background:linear-gradient(180deg,#0f1a33cc,#0b1327cc);  
+      border:1px solid var(--border);  
+      border-radius:var(--radius);  
+      box-shadow:var(--shadow);  
+      padding:22px;  
+      text-align:center;  
+    }  
+  
+    .badge{  
+      display:inline-flex;  
+      align-items:center;  
+      gap:8px;  
+      padding:6px 12px;  
+      border-radius:999px;  
+      background:#0b1631;  
+      border:1px solid #2a3d6f;  
+      font-size:12px;  
+      color:var(--muted);  
+      margin-bottom:12px;  
+    }  
+    .dot{  
+      width:8px;height:8px;border-radius:50%;  
+      background:#ffb703;  
+      box-shadow:0 0 12px rgba(255,183,3,.8);  
+    }  
+  
+    h1{margin:8px 0 10px;font-size:26px}  
+    p{margin:0 0 18px;color:var(--muted);font-size:14.5px;line-height:1.5}  
+  
+    /* BOUNCING ARROW ABOVE BUTTON */
+    .arrow-down{
+      font-size:26px;
+      margin:6px 0 8px;
+      animation:bounce 1.2s infinite;
     }
 
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      min-height:100vh;
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      color:var(--text);
-      background:
-        radial-gradient(800px 500px at 20% 10%, #1f2a52 0%, transparent 60%),
-        radial-gradient(700px 450px at 80% 20%, #1a6b6b 0%, transparent 55%),
-        linear-gradient(180deg,var(--bg1),var(--bg2));
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:24px;
+    @keyframes bounce{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(8px)}
     }
-
-    .wrap{width:min(480px,100%)}
-    .card{
-      background:linear-gradient(180deg,#0f1a33cc,#0b1327cc);
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:22px;
-      text-align:center;
-    }
-
-    .badge{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:6px 12px;
-      border-radius:999px;
-      background:#0b1631;
-      border:1px solid #2a3d6f;
-      font-size:12px;
-      color:var(--muted);
-      margin-bottom:12px;
-    }
-    .dot{
-      width:8px;height:8px;border-radius:50%;
-      background:#ffb703;
-      box-shadow:0 0 12px rgba(255,183,3,.8);
-    }
-
-    h1{margin:8px 0 10px;font-size:26px}
-    p{margin:0 0 18px;color:var(--muted);font-size:14.5px;line-height:1.5}
-
-    .btn{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:14px 16px;
-      border-radius:16px;
-      text-decoration:none;
-      color:#fff;
-      font-weight:800;
-      margin-bottom:12px;
-      border:1px solid rgba(255,255,255,.18);
-      box-shadow:0 10px 25px rgba(0,0,0,.28);
-      transition:.15s transform,.15s filter;
-    }
-    .btn:hover{transform:translateY(-1px);filter:brightness(1.05)}
-    .btn:active{transform:translateY(0)}
-
-    .left{display:flex;align-items:center;gap:12px}
-    .icon{
-      width:42px;height:42px;
-      border-radius:12px;
-      display:grid;place-items:center;
-      background:rgba(0,0,0,.2);
-      border:1px solid rgba(255,255,255,.16);
-    }
-    .arrow{
-      width:38px;height:38px;
-      border-radius:12px;
-      display:grid;place-items:center;
-      background:rgba(0,0,0,.2);
-      border:1px solid rgba(255,255,255,.16);
-      font-size:18px;
-    }
-
-    .whatsapp{background:linear-gradient(135deg,var(--wa1),var(--wa2))}
-    .telegram{background:linear-gradient(135deg,var(--tg1),var(--tg2))}
-
-    .note{
-      margin-top:14px;
-      padding:12px;
-      border-radius:14px;
-      background:#07122a;
-      border:1px solid #21335f;
-      font-size:12.5px;
-      color:#b9c7e8;
-      line-height:1.45;
-    }
-
-    footer{
-      margin-top:14px;
-      font-size:12px;
-      color:#93a6cf;
-    }
-  </style>
-</head>
-
-<body>
-  <main class="wrap">
-    <section class="card">
-
-      <div class="badge">
-        <span class="dot"></span> Official Correct Score Channels
-      </div>
-
-      <h1>Correct Score Updates</h1>
-      <p>Join our official WhatsApp and Telegram channels for daily football correct score updates.</p>
-
-      <!-- WHATSAPP FIRST -->
-      <a class="btn whatsapp" href="https://whatsapp.com/channel/0029VbB1wSD65yD9CsdqiH2V" target="_blank" rel="noopener">
-        <div class="left">
-          <div class="icon">🟢</div>
-          <span>Join WhatsApp Channel</span>
-        </div>
-        <div class="arrow">➜</div>
-      </a>
-
-      <!-- TELEGRAM SECOND (FIXED LINK WITH +) -->
-      <a class="btn telegram" href="https://t.me/+iBcg9kVZI6M4ZjNk" target="_blank" rel="noopener">
-        <div class="left">
-          <div class="icon">🔵</div>
-          <span>Join Telegram Channel</span>
-        </div>
-        <div class="arrow">➜</div>
-      </a>
-
-      <div class="note">
-        <b>Disclaimer:</b> Predictions are based on team analysis and past performance.
-         <b>18+ only.</b>
-      </div>
-
-      <footer>© <span id="y"></span> Correct Score</footer>
-
-    </section>
-  </main>
-
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
-</body>
+  
+    .btn{  
+      display:flex;  
+      align-items:center;  
+      justify-content:space-between;  
+      padding:14px 16px;  
+      border-radius:16px;  
+      text-decoration:none;  
+      color:#fff;  
+      font-weight:800;  
+      margin-bottom:16px;  
+      border:1px solid rgba(255,255,255,.18);  
+      box-shadow:0 10px 25px rgba(0,0,0,.28);  
+      transition:.15s transform,.15s filter;  
+    }  
+    .btn:hover{transform:translateY(-1px);filter:brightness(1.05)}  
+    .btn:active{transform:translateY(0)}  
+  
+    .left{display:flex;align-items:center;gap:12px}  
+    .icon{  
+      width:42px;height:42px;  
+      border-radius:12px;  
+      display:grid;place-items:center;  
+      background:rgba(0,0,0,.2);  
+      border:1px solid rgba(255,255,255,.16);  
+    }  
+  
+    .whatsapp{background:linear-gradient(135deg,var(--wa1),var(--wa2))}  
+    .telegram{background:linear-gradient(135deg,var(--tg1),var(--tg2))}  
+  
+    .note{  
+      margin-top:14px;  
+      padding:12px;  
+      border-radius:14px;  
+      background:#07122a;  
+      border:1px solid #21335f;  
+      font-size:12.5px;  
+      color:#b9c7e8;  
+      line-height:1.45;  
+    }  
+  
+    footer{  
+      margin-top:14px;  
+      font-size:12px;  
+      color:#93a6cf;  
+    }  
+  </style>  
+</head>  
+  
+<body>  
+  <main class="wrap">  
+    <section class="card">  
+  
+      <div class="badge">  
+        <span class="dot"></span> Official Correct Score Channels  
+      </div>  
+  
+      <h1>Correct Score Updates</h1>  
+      <p>Join our official WhatsApp and Telegram channels for daily football correct score updates.</p>  
+  
+      <!-- WHATSAPP -->
+      <div class="arrow-down">⬇️</div>
+      <a class="btn whatsapp" href="https://whatsapp.com/channel/0029VbB1wSD65yD9CsdqiH2V" target="_blank" rel="noopener">  
+        <div class="left">  
+          <div class="icon">🟢</div>  
+          <span>Join WhatsApp Channel</span>  
+        </div>  
+      </a>  
+  
+      <!-- TELEGRAM -->
+      <div class="arrow-down">⬇️</div>
+      <a class="btn telegram" href="https://t.me/+iBcg9kVZI6M4ZjNk" target="_blank" rel="noopener">  
+        <div class="left">  
+          <div class="icon">🔵</div>  
+          <span>Join Telegram Channel</span>  
+        </div>  
+      </a>  
+  
+      <div class="note">  
+        <b>Disclaimer:</b> Predictions are based on team analysis and past performance.  
+         <b>18+ only.</b>  
+      </div>  
+  
+      <footer>© <span id="y"></span> Correct Score</footer>  
+  
+    </section>  
+  </main>  
+  
+  <script>  
+    document.getElementById("y").textContent = new Date().getFullYear();  
+  </script>  
+</body>  
 </html>
